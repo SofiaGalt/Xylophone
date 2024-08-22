@@ -19,12 +19,12 @@ class ViewController: UIViewController {
     }
 
 
-    @IBAction func redButtonTapped(_ sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: UIButton) {
         
-        
-        print("I was pressed!")
-        playSound()
+        print("key pressed")
     }
+    
+    
     
     func playSound() {
         guard let url = Bundle.main.url(forResource: "C", withExtension: "wav") else { return }
