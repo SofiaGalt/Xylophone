@@ -22,12 +22,14 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         
         print("key pressed")
+        print(sender.currentTitle!)
+        playSound(xylophoneKey: sender.currentTitle!)
     }
     
     
     
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "C", withExtension: "wav") else { return }
+    func playSound(xylophoneKey: String) {
+        guard let url = Bundle.main.url(forResource: xylophoneKey, withExtension: "wav") else { return }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
